@@ -1,5 +1,6 @@
 import "../Project.css";
 
+
 function Project(props) {
 
     return (
@@ -24,7 +25,7 @@ function Project(props) {
 
 
         </div>
-    )
-};
+    );
+}
 
 export default Project;
