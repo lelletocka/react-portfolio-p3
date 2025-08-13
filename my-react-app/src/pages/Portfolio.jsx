@@ -2,8 +2,12 @@ import Project from "../components/Project.jsx";
 import DuckFormImage from "../images/duck-form-project.png";
 import AnimationImage from "../images/animation-project.png";
 import BookTrackerImage from "../images/book-tracker-project.png";
+import { useState } from "react";
 
-function Portfolio() {
+
+function PortfolioBtn() {
+
+    function Portfolio() {
     return (
         <>
             <Project 
@@ -39,6 +43,34 @@ function Portfolio() {
         </>
     );
     
+    }
+
+    const [showPortfolio, setShowPortfolio] = useState(false);
+
+    const togglePortfolio = () => {
+        if (showPortfolio) {
+            setShowPortfolio(false);
+        } else {
+            setShowPortfolio(true); 
+            return (
+                Portfolio()
+            );
+        }
+    };
+
+
+    return (
+        <div>
+            <button className="portfolio-btn" onClick={togglePortfolio}>
+                {showPortfolio ? "Hide Portfolio" : "Show Portfolio"}
+            </button>
+            <div>
+                {showPortfolio ? Portfolio() : null}
+            </div>
+        </div>
+    );
 }
 
-export default Portfolio;
+
+
+export default PortfolioBtn;
