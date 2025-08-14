@@ -1,10 +1,12 @@
 import React from "react";
+import "../popup.css";
+//import Project from "./Project.jsx";
 
 const PopupProject = ({ projectName, img, tech, githubLink, answerProject, answerRole, answerChallenges, answerLearned, onClick }) => {
     return (
         <div className="popup-project">
             <div className="title-div">
-                <h2>{projectName}</h2>
+                <h1>{projectName}</h1>
                 <p className="title-p tech-p">{tech}</p>
                 <p className="title-p github-p"><a className="github-link" href={githubLink}>{githubLink}</a></p>
             </div>
@@ -20,10 +22,26 @@ const PopupProject = ({ projectName, img, tech, githubLink, answerProject, answe
                 <h4 className="subject_h">What I Learned</h4>
                 <p className="subject_p">{answerLearned}</p>
             </div>
-            <button className="close-btn" onClick={onCLick}>
+            <button className="close-btn" onClick={onClick}>
                 Close
             </button>
         </div>
+        /* The required props for the popup is the same as on the project components.
+            I get that a few props is needed to learn how opoup windows and their props 
+            work, but with this content, wouldn't the code look neater if you just 
+            import the project component to the popup function instead? 
+            
+            Alternative code:
+        return (
+            <div>
+                <Project 
+                />
+                <button className="close-btn" onClick={onClick}>
+                    Close
+                </button>
+            </div>
+        );        
+            */ 
     )
 } 
 
