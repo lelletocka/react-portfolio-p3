@@ -2,47 +2,21 @@ import React from "react";
 import "../popup.css";
 //import Project from "./Project.jsx";
 
-const PopupProject = ({ projectName, img, tech, githubLink, answerProject, answerRole, answerChallenges, answerLearned, onClick }) => {
+const PopupProject = ({ projectName, tech, onClick }) => {
     return (
         <div className="popup-project">
-            <div className="title-div">
-                <h1>{projectName}</h1>
-                <p className="title-p tech-p">{tech}</p>
-                <p className="title-p github-p"><a className="github-link" href={githubLink}>{githubLink}</a></p>
-            </div>
-            <img className="project-img" src={img} alt={"Screenshot of the " + projectName + " project"} />                       
-            <div className="about-div">
-                <h3 className="about-h">About the project</h3>
-                <h4 className="subject_h">The Project</h4>
-                <p className="subject_p">{answerProject}</p>
-                <h4 className="subject_h">Role</h4>
-                <p className="subject_p">{answerRole}</p>
-                <h4 className="subject_h">Challenges</h4>
-                <p className="subject_p">{answerChallenges}</p>
-                <h4 className="subject_h">What I Learned</h4>
-                <p className="subject_p">{answerLearned}</p>
-            </div>
-            <button className="close-btn" onClick={onClick}>
-                Close
-            </button>
+            <p className="pop-pre-p">This is a popup window for</p>
+            <h1 className="pop-h1">{projectName}</h1> 
+            <p className="pop-tech-p">{tech}</p> 
+            <button onClick={onClick}>Close</button>
         </div>
-        /* The required props for the popup is the same as on the project components.
-            I get that a few props is needed to learn how opoup windows and their props 
-            work, but with this content, wouldn't the code look neater if you just 
-            import the project component to the popup function instead? 
+        /* I read the assignment and thought it meant to include basically the whole
+        project component in the popup, but searching the internet the recommendations
+        seem to be to use as few props as possible in a popup. I feel quite lost at this
+        very moment, but that is what I will do. */
+             
             
-            Alternative code:
-        return (
-            <div>
-                <Project 
-                />
-                <button className="close-btn" onClick={onClick}>
-                    Close
-                </button>
-            </div>
-        );        
-            */ 
-    )
-} 
+    );
+}; 
 
 export default PopupProject;
