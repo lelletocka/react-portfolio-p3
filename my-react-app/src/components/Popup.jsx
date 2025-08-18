@@ -1,11 +1,11 @@
-import React from "react";
+//import React from "react";
 import "../popup.css";
-//import Project from "./Project.jsx";
 
-const PopupProject = ({ projectName, tech, onClick }) => {
+
+const PopupProject = ({ popupIntro, projectName, tech, onClick }) => {
     return (
         <div className="popup-project">
-            <p className="pop-pre-p">This is a popup window for</p>
+            <p className="pop-pre-p">{popupIntro}</p>
             <h1 className="pop-h1">{projectName}</h1> 
             <p className="pop-tech-p">{tech}</p> 
             <button onClick={onClick}>Close</button>

@@ -1,43 +1,24 @@
+import { useState } from "react";
 import Project from "../components/Project.jsx";
+import PopupProject from "../components/Popup.jsx";
+
 import DuckFormImage from "../images/duck-form-project.png";
 import AnimationImage from "../images/animation-project.png";
 import BookTrackerImage from "../images/book-tracker-project.png";
-import { useState } from "react";
-import PopupProject from "../components/Popup.jsx";
 
 
 
 
 function Portfolio() {
         
-        const [popupOne, setPopupOne] = useState({
-            projectName: "Duck Form",
-            tech: "Html, CSS",
+        const [popupIntro, setPopupInfo] = useState({
+            popupIntro: "This is a popup window for",
         });
-        const [popupTwo, setPopupTwo] = useState({
-            projectName: "Animation and SVG",
-            tech: "Html, CSS",
-        });
-        const [popupThree, setPopupThree] = useState({
-            projectName: "Book-tracker",
-            tech: "JavaScript",
-        });
+        const [popupContent, setPopupContent] = useState(null);
 
-//       
-        const [isPopOneOpen, setIsPopOneOpen] = useState(false); 
-        const [isPopTwoOpen, setIsPopTwoOpen] = useState(false);
-        const [isPopThreeOpen, setIsPopThreeOpen] = useState(false);
-
-        const closePopOne = () => {
-            setIsPopOneOpen(false);
+        const closePopup = () => { setPopupContent(null); 
         };
-        const closePopTwo = () => {
-            setIsPopTwoOpen(false);
-        };
-        const closePopThree = () => {
-            setIsPopThreeOpen(false);
-        };
-
+        
         const projects = [
             {
                 projectName: "Duck Form",
@@ -74,8 +55,8 @@ function Portfolio() {
         return (
             <div>
                 {projects.map((project, index) => (
-                    <div key={index} >
-                        <Project
+                    <div key={index} onClick={() => setPopupContent(project)}>
+                        <Project    
                             projectName={project.projectName}
                             img={project.img} 
                             tech={project.tech} 
@@ -88,31 +69,14 @@ function Portfolio() {
                     </div>
                 ))}
 
-
-               
-                
-                {isPopOneOpen && (
+                {popupContent && (
                    <PopupProject 
-                        projectName={popupOne.projectName}
-                        tech={popupOne.tech}
-                        onClick={closePopOne}
+                        popupIntro={popupIntro.popupIntro}
+                        projectName={popupContent.projectName}
+                        tech={popupContent.tech}
+                        onClick={closePopup}
                     />
-                )}
-                {isPopTwoOpen && (
-                    <PopupProject 
-                        projectName={popupTwo.projectName}
-                        tech={popupTwo.tech}
-                        onClick={closePopTwo}
-                    />
-                )}
-                {isPopThreeOpen && (
-                    <PopupProject 
-                        projectName={popupThree.projectName}
-                        tech={popupThree.tech}
-                        onClick={closePopThree}
-                    />
-                )}
-                
+                )}                
             </div>
         );
     
