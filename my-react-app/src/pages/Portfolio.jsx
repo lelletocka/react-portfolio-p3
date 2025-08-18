@@ -6,23 +6,9 @@ import { useState } from "react";
 import PopupProject from "../components/Popup.jsx";
 
 
-function PortfolioBtn() {
-
-    const [showPortfolio, setShowPortfolio] = useState(false);
-
-    const togglePortfolio = () => {
-        if (showPortfolio) {
-            setShowPortfolio(false);
-        } else {
-            setShowPortfolio(true); 
-            return (
-                Portfolio()
-            );
-        }
-    };
 
 
-    function Portfolio() {
+function Portfolio() {
         
         const [popupOne, setPopupOne] = useState({
             projectName: "Duck Form",
@@ -125,8 +111,14 @@ function PortfolioBtn() {
     }
 
 
-    
 
+
+function PortfolioBtn() {
+
+    const [showPortfolio, setShowPortfolio] = useState(false);
+
+    const togglePortfolio = () => setShowPortfolio(prev => !prev);        
+    
 
     return (
         <div>
@@ -134,7 +126,7 @@ function PortfolioBtn() {
                 {showPortfolio ? "Hide Portfolio" : "Show Portfolio"}
             </button>
             <div>
-                {showPortfolio ? Portfolio() : null}
+                {showPortfolio && <Portfolio />}
             </div>
              
         </div>
