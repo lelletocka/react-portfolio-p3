@@ -41,7 +41,7 @@ function Portfolio() {
         const projects = [
             {
                 projectName: "Duck Form",
-                img: {DuckFormImage},
+                img: DuckFormImage,
                 tech: "Html, CSS",
                 githubLink: "https://github.com/lelletocka/duck-form",
                 answerProject: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
@@ -51,7 +51,7 @@ function Portfolio() {
             },
             {
                 projectName: "Animation and SVG",
-                img: {AnimationImage},
+                img: AnimationImage,
                 tech: "Html, CSS",
                 githubLink: "https://github.com/lelletocka/animation-svg",
                 answerProject: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
@@ -61,7 +61,7 @@ function Portfolio() {
             },
             {
                 projectName: "Book-tracker",
-                img: {BookTrackerImage},
+                img: BookTrackerImage,
                 tech: "JavaScript",
                 githubLink: "https://github.com/lelletocka/js_06",
                 answerProject: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
